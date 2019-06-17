@@ -19,6 +19,7 @@ let userLogin = (req, res) => {
 
 let userRegister = (req, res) => {
   let { body } = req
+  body.status = false
 
   body.result = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 
