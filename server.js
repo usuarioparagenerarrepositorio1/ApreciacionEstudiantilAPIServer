@@ -23,8 +23,10 @@ app.use((req, res, next) => {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/', (req, res) => {
-  res.send('Entrada principal')
+app.use(express.static(path.join(__dirname, '/client/ApreciacionEstudiantil')))
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname))
 })
 
 app.use(require('./routes'))
