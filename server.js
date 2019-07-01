@@ -29,6 +29,8 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname))
 })
 
+
+
 app.use(require('./routes'))
 
 mongoose.Promise = global.Promise
@@ -44,3 +46,5 @@ mongoose.connect(app.get('connecturi'), {
 app.listen(app.get('port'), () => {
   c(`Aplicacion Ejecutandose en el Puerto ${app.get('port')}`)
 })
+
+
